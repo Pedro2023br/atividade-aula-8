@@ -1,7 +1,7 @@
 
 # Exercícios Resolvidos - Aula 08
 
-Este repositório contém a resolução dos exercícios propostos na aula 08. Cada questão é explicada com seu enunciado, abordagem de solução e código implementado.
+Este repositório contém a resolução dos exercícios propostos na aula 08. Cada questão é explicada com seu enunciado, abordagem de solução e código implementado utilizando o padrão JSDoc para documentar as funções.
 
 ---
 
@@ -17,8 +17,14 @@ Teste a função com os valores `15`, `18` e `21`.
 ### Solução:
 A função usa uma estrutura condicional `if-else` para verificar a idade fornecida e retornar a categoria correspondente.
 
-#### Código:
+#### Código com JSDoc:
 ```javascript
+/**
+ * Verifica se a pessoa é maior ou menor de idade.
+ *
+ * @param {number} idade - A idade da pessoa.
+ * @returns {string} Retorna "Menor de idade" se a idade for menor que 18, ou "Maior de idade" caso contrário.
+ */
 function verificarIdade(idade) {
     if (idade < 18) {
         return "Menor de idade";
@@ -46,8 +52,14 @@ Caso o número seja inválido, retorne `"Número inválido"`. Teste com os valor
 ### Solução:
 A função usa uma estrutura `switch` para mapear os números aos dias da semana e um caso padrão para entradas inválidas.
 
-#### Código:
+#### Código com JSDoc:
 ```javascript
+/**
+ * Retorna o nome do dia da semana com base no número fornecido.
+ *
+ * @param {number} dia - Número do dia da semana (1 a 7).
+ * @returns {string} O nome do dia correspondente ou "Número inválido" se o número estiver fora do intervalo.
+ */
 function definirDiaDaSemana(dia) {
     switch (dia) {
         case 1:
@@ -88,8 +100,14 @@ Teste com os valores `10`, `15` e `22`.
 ### Solução:
 A função usa o operador ternário para realizar a verificação de forma concisa.
 
-#### Código:
+#### Código com JSDoc:
 ```javascript
+/**
+ * Verifica se um número é par ou ímpar.
+ *
+ * @param {number} numero - O número a ser verificado.
+ * @returns {string} Retorna "Par" se o número for par, ou "Ímpar" caso contrário.
+ */
 const parOuImpar = (numero) => numero % 2 === 0 ? "Par" : "Ímpar";
 
 // Testes
@@ -111,8 +129,17 @@ A função recebe um objeto com as propriedades: `idade`, `isAdmin` e `isBlocked
 ### Solução:
 A lógica combina operadores lógicos `||` e `&&` para verificar as condições de acesso.
 
-#### Código:
+#### Código com JSDoc:
 ```javascript
+/**
+ * Verifica se o usuário pode acessar o sistema com base nas condições de idade, administração e bloqueio.
+ *
+ * @param {Object} usuario - O objeto que contém as informações do usuário.
+ * @param {number} usuario.idade - A idade do usuário.
+ * @param {boolean} usuario.isAdmin - Se o usuário é administrador.
+ * @param {boolean} usuario.isBlocked - Se a conta do usuário está bloqueada.
+ * @returns {boolean} Retorna `true` se o usuário pode acessar o sistema, ou `false` caso contrário.
+ */
 const podeAcessar = ({ idade, isAdmin, isBlocked }) => (idade >= 18 || isAdmin) && !isBlocked;
 
 // Testes
@@ -136,8 +163,15 @@ A função deve retornar o preço final com o desconto aplicado. Teste com os va
 A função calcula o desconto aplicando a fórmula:  
 `precoFinal = precoOriginal - (precoOriginal * porcentagemDesconto / 100)`.
 
-#### Código:
+#### Código com JSDoc:
 ```javascript
+/**
+ * Calcula o preço final de um produto após aplicar o desconto.
+ *
+ * @param {number} precoOriginal - O preço original do produto.
+ * @param {number} porcentagemDesconto - A porcentagem de desconto a ser aplicada.
+ * @returns {number} O preço final após o desconto.
+ */
 const calcularDesconto = (precoOriginal, porcentagemDesconto) => 
     precoOriginal - (precoOriginal * porcentagemDesconto / 100);
 
